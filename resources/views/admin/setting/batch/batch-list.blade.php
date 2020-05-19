@@ -20,7 +20,9 @@
 
                             <tr>
                                 <td>
-                                    <div class="form-group row mb-0">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <div class="form-group row mb-0">
                                         <label for="classId" class="col-form-label col-sm-3 text-right">Class Name</label>
                                         <div class="col-sm-9">
                                             <select name="class_id" class="form-control @error('class_id') is-invalid @enderror" id="classId" required autofocus>
@@ -38,38 +40,87 @@
                                             @enderror
                                         </div>
                                     </div>
+                                        </div>
+                                           <div class="col-md">
+                                            <div class="form-group row mb-0">
+                                        <label class="col-form-label col-sm-3 text-right">Course</label>
+                                        <div class="col-sm-9">
+                                            <select name="type_id" class="form-control @error('type_id') is-invalid @enderror" id="typeId" required >
+                                                <option value="">  Select Course </option>
+
+                                               
+                                            </select>
+
+                                            @error('type_id')
+                                            <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                        </div>
+                                        
+                                    </div>
                                 </td>
                             </tr>
 
                            </table>
                     </div>
+
                     <div class="table-responsive">
 
-                        <table  class="table table-bordered table-hover text-center" id="batchList"></table>
+                        <table  class="table table-bordered table-hover text-center"   id="batchList"></table>
 
                     </div>
-
+                    
             </div>
         </div>
 
     </section>
-    <!--Content End-->
+<!--Content End-->
 
-    <script>
-        $('#classId').change(function () {
 
-            var classId = $(this).val();
-            if(classId){
-                $.get(" {{ route('batch-list-by-ajax') }}",{
+ <script >
+    
+$('#classId').change(function(){
+
+    var classId = $(this).val();
+    if (classId){
+         $('#overlay .loader').show();
+       $.get(" {{ route('class-wise-student-type') }}",{
                     class_id : classId
                 },function(data){
-                
-                 $('#batchList').empty().html(data);
+                    $('#overlay .loader').hide();
+                    console.log(data);
+                    $('#typeId').empty().html(data);
+                });
+
+    }else{
+         $('#typeId').empty().html('  <option value=""> Select Type</option>');
+    }
+})
+
+$('#typeId').change(function () {
+           
+            var classId = $('$classId').val();
+            var studentTypeId = $(this).val();
+            if(classId && studentTypeId){
+                 $('#overlay .loader').show();
+                $.get(" {{ route('batch-list-by-ajax') }}",{
+                    class_id : classId,
+                    type_id : studentTypeId,
+                },function(data){
+                $('#overlay .loader').hide();
+                console.log(data);
+                 $('#batchList').html(data);
                    
                 })
+            }else{
+                $('#batchList').empty();
+                $('#overlay .loader').hide();
             }
            
+            
         })
-    </script>
-    
+
+</script>
+
 @endsection

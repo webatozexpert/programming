@@ -4,7 +4,9 @@
     <section class="container-fluid">
         <div class="row content">
             <div class="col-12 pl-0 pr-0">
-                  @include('admin.includes.alert')
+
+                   @include('admin.includes.alert')
+                  
                 <div class="form-group">
                     <div class="col-sm-12">
                         <h4 class="text-center font-weight-bold font-italic mt-3">Student Type List</h4>

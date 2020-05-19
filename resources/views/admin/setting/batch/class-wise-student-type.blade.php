@@ -1,4 +1,6 @@
-  <option value=""> Select Type</option>
+
+
+ <option value=""> Select Type</option>
 
 @if(count($types)>0)
 

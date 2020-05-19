@@ -2,6 +2,7 @@
   <tr>
     <th>Sl No</th>
     <th>Batch Name</th>
+    <th>Capacity</th>
     <th>Action</th>
   </tr>
 </thead>
@@ -12,7 +13,7 @@
   <tr>
     <td>{{ $i++}}</td>
       <td>{{ $batch->batch_name}}</td>
-      
+      <td>{{ $batch->student_capacity}}</td>
         <td>
           @if($batch->status==1)
               <a href="{{ route('class-unpublished',['id'=>$batch->id]) }}" class="btn btn-sm btn-primary" title="unpublished"><span class="fa fa-eye" ></span>View</a>

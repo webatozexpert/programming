@@ -25,7 +25,7 @@
                             <tr>
                                 <td>
                                     <div class="form-group row mb-0">
-                                        <label for="classId" class="col-form-label col-sm-3 text-right">Class Name</label>
+                                        <label  class="col-form-label col-sm-3 text-right">Class Name</label>
                                         <div class="col-sm-9">
 
 
@@ -50,18 +50,18 @@
                            <tr>
                                 <td>
                                     <div class="form-group row mb-0">
-                                        <label for="typeId" class="col-form-label col-sm-3 text-right">Student Type</label>
+                                        <label  class="col-form-label col-sm-3 text-right">Student Type</label>
                                         <div class="col-sm-9">
 
 
-                                            <select name="type_id" class="form-control @error('type_id') is-invalid @enderror"  id="typeId"  autofocus>
+                                            <select name="student_type_id" class="form-control @error('student_type_id') is-invalid @enderror"  id="typeId"  autofocus>
 
                                               <option value=""> Select Type</option>
 
                                             
 
                                             </select>
-                                            @error('type_id')
+                                            @error('student_type_id')
                                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                             @enderror
                                         </div>
@@ -75,7 +75,7 @@
                             <tr>
                                 <td>
                                     <div class="form-group row mb-0">
-                                        <label for="batchName" class="col-form-label col-sm-3 text-right">Batch Name</label>
+                                        <label  class="col-form-label col-sm-3 text-right">Batch Name</label>
                                         <div class="col-sm-9">
                                             <input type="text" class="form-control @error('batch_name') is-invalid @enderror" name="batch_name" value="{{ old('batch_name') }}" id="batchName" placeholder="Write batch name here" required>
                                             @error('batch_name')
@@ -88,9 +88,9 @@
                              <tr>
                                 <td>
                                     <div class="form-group row mb-0">
-                                        <label for="capacity" class="col-form-label col-sm-3 text-right">Student Capacity</label>
+                                        <label  class="col-form-label col-sm-3 text-right">Student Capacity</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control @error('student_capa') is-invalid @enderror" name="student_capa" value="{{ old('student_capa') }}" id="capacity" placeholder="Write batch name here" required>
+                                            <input type="text" class="form-control @error('student_capacity') is-invalid @enderror" name="student_capacity" value="{{ old('student_capacity') }}" id="capacity" placeholder="Write batch name here" required>
                                             @error('student_capa')
                                             <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                                             @enderror

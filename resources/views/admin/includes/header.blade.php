@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Averfresh | Home</title>
     <!--    Font Awesome Stylesheet-->
-    <link rel="stylesheet" href="{{asset('/')}}/admin/{{asset('/')}}/admin/assets/fonts/fa/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('/')}}/admin/assets/fonts/fa/css/all.min.css">
     <!--    Animate CSS-->
     <link rel="stylesheet" href="{{asset('/')}}/admin/assets/css/animate.css">
     <!--    Owl Carosel Stylesheets-->
@@ -26,7 +26,8 @@
 
     <!--    jQuery-->
     <!-- <script src="{{asset('/')}}/admin/assets/js/jquery-3.3.1.slim.min.js"></script> -->
-      <script src="{{asset('/')}}/admin/assets/js/jquery-3.4.1.js"></script>
+      <!--<script src="{{asset('/')}}/admin/assets/js/jquery-3.4.1.js"></script>-->
+       <script src="{{asset('/')}}/admin/assets/js/jquery-3.5.1.js"></script>
     <!--    Favicon-->
     <link rel="shortcut icon" href="{{asset('/')}}/admin/assets/images/favicon.png" type="image/x-icon">
 </head>
